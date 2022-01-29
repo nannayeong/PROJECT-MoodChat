@@ -1,16 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import chat from '../view/Chat'
+import chatRoom from '../view/ChatRoom'
 
 const routes = [
   {
     path: '/',
-    component: chat,
+    component: chatRoom,
   },
 ]
 
 const router = createRouter({
-  history: createWebHistory('/awd/'),
+  history: createWebHistory('/moodchat/'),
   routes
 })
 

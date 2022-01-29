@@ -5,147 +5,130 @@
 }
 
 #chatRoom {
-  height: 100vh;
-  button {
-    cursor: pointer;
-  }
-  .header {
+  width: 100%;
+  header {
     position: fixed;
-    left: 0;
-    top: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 40px;
-    .msgSearchContainer {
-      position: relative;
-      width: 100%;
-      input[type="text"] {
-        position: relative;
-        width: 100%;
-        outline: none;
-        border-radius: 5px;
-      }
-    }
-    button {
-      padding: 10px;
-      position: relative;
-      white-space: nowrap;
-      &.msg-search-btn {
-        top: 0;
-        right: 0;
-      }
-    }
-  }
-  .body {
-    padding-top: 40px;
-    .msg-group {
-      display: flex;
-      .profile {
-        width: 20px;
-        height: 20px;
-      }
-      .msg-wrapper-wrapper {
-        .msg-wrapper {
-          display: flex;
-          padding: 3px;
-          .msg {
-            padding: 7px;
-            border-radius: 10px;
-          }
-          .date {
-            display: flex;
-            align-items: flex-end;
-            font-size: 12px;
-            margin: 0 7px;
-          }
-          &:last-child {
-            display: flex;
-          }
-        }
-      }
-      &.send-msg {
-        flex-direction: row-reverse;
-        .profile {
-          display: none;
-        }
-        .nickname {
-          display: none;
-        }
-        .msg-wrapper-wrapper {
-          .msg-wrapper {
-            justify-content: flex-end;
-            .msg {
-              background-color: pink;
-            }
-            &:last-child {
-              display: flex;
-              flex-direction: row-reverse;
-            }
-          }
-        }
-      }
-      &.receive-msg {
-        flex-direction: row;
-        .msg-wrapper-wrapper {
-          .msg-wrapper {
-            justify-content: flex-start;
-            .msg {
-              background-color: white;
-            }
-            &:last-child {
-              display: flex;
-              flex-direction: row;
-            }
-          }
-        } 
-      }
-    }
-  }
-  .footer {
-    position: fixed;
+    top: 0;
     left: 0;
-    bottom: 0;
-    background-color: white;
-    width: 100%;
-    .msg-emotion-container {
-      background-color: white;
-      border: 1px black solid;
-      border-radius: 5px;
-      background-color: white;
-      button {
-        padding: 10px;
-        width: 80px
-      }
+    background-color: pink;
+    width: inherit;
+    height: 50px;
+    button {
+      height: inherit;
+      width: 50px;
     }
-    .msg-sender {
+    h2 {
+      display: inline-block;
+      line-height: 50px;
+      height: inherit;
+      font-weight: 700;
+    }
+  }
+  .chatRoomBody {
+    background-color: gray;
+    padding: 50px 5px;
+    height: calc(100vh - 100px);
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+  footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: inherit;
+    background-color: white;
+    .sendMessageContainer {
       display: flex;
-      .msg-emotion-btn {
-        position: relative;
-        border-radius: 20px;
-      }
-      textarea {
-        position: relative;
+      height: 50px;
+      width: inherit;
+      input[type="text"] {
+        background-color: white;
         outline: none;
-        width: 100%;
-        padding: 2px;
+        width: 72%;
       }
       button {
-        position: relative;
-        padding: 10px;
-        width: 60px;
-        white-space: nowrap;
-        &[type="submit"] {
-          right: 0;
-          &.active {
-            background-color: red;
-          }
-          &.inactive {
+        height: inherit;
+        width: 50px;
+        &.moodPaletteBtn {
+          div {
+            margin: auto;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            background-color: gray;
           }
         }
+        &.sendMessageBtn {
+          margin-left: auto;
+        }
       }
+    }
+    .optionContainer {
+      width: inherit;
+      background-color: white;
     }
   }
 }
 
+#chatMessageGroup {
+  display: flex;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 14px;
+  .profileImg {
+    vertical-align: top;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: pink;
+  }
+  .chatMessageGroupBody {
+    display: inline-block;
+    margin: 0 6px;
+    width: inherit;
+    .nickname {
+      max-width: 60%;
+    }
+    .message {
+      display: inline-block;
+      background-color: white;
+      border-radius: 10px;
+      padding: 6px;
+      margin-top: 6px;
+      word-break: break-all;
+      max-width: 60%;
+    }
+    .date {
+      vertical-align: bottom;
+      margin: 0 6px;
+    } 
+  }
+
+  &.receive {
+    .message {
+      background-color: white;
+    }
+  }
+
+  &.send {
+    .profileImg {
+      display: none;
+    }
+    .nickname {
+      display: none;
+    }
+    .chatMessageGroupBody ol li {
+      display: flex;
+      flex-direction: row-reverse;
+      .message {
+        background-color: yellow;
+      }
+    }
+    .date {
+      margin-top: auto;
+    }
+  }
+}
+#chatMoodPalette {
+  background-color: white;
+}
