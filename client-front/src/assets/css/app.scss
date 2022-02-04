@@ -17,17 +17,22 @@
     button {
       height: inherit;
       width: 50px;
+      &.movePrev img {
+        width: 30px;
+        height: 30px;
+      }
     }
     h2 {
       display: inline-block;
       line-height: 50px;
       height: inherit;
-      font-weight: 700;
+      font-weight: 500;
+      font-size: 16px;
     }
   }
   .chatRoomBody {
     background-color: gray;
-    padding: 50px 5px;
+    padding: 56px 5px;
     height: calc(100vh - 100px);
     overflow: auto;
     scroll-behavior: smooth;
@@ -40,26 +45,33 @@
     background-color: white;
     .sendMessageContainer {
       display: flex;
-      height: 50px;
+      min-height: 40px;
       width: inherit;
-      input[type="text"] {
+      .sendMessageInput {
         background-color: white;
         outline: none;
         width: 72%;
+        margin: 14px;
+        font-size: 14px;
       }
       button {
         height: inherit;
-        width: 50px;
+        width: 40px;
         &.moodPaletteBtn {
           div {
             margin: auto;
-            width: calc(100% - 10px);
-            height: calc(100% - 10px);
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
             background-color: gray;
           }
         }
         &.sendMessageBtn {
           margin-left: auto;
+        }
+        &.hashTagBtn img{
+          width: 30px;
+          height: 30px;
+          margin: 4px 0 0 4px;
         }
       }
     }
@@ -88,6 +100,7 @@
     width: inherit;
     .nickname {
       max-width: 60%;
+      font-size: 12px;
     }
     .message {
       display: inline-block;
@@ -97,10 +110,12 @@
       margin-top: 6px;
       word-break: break-all;
       max-width: 60%;
+      font-size: 14px;
     }
     .date {
       vertical-align: bottom;
       margin: 0 6px;
+      font-size: 12px;
     } 
   }
 
